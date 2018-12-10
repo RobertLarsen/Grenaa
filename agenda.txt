@@ -1,0 +1,50 @@
+En fordel at have arbejdet med:
+* Linux kommando linjen
+* Python
+
+10. Januar - Intro
+Værktøjer: Kode editor og C# compiler
+* Agenda for hele workshoppen
+** Reverse engineering
+** Exploit udvikling
+** Udvikling af shellcode
+* Værktøjer som vi kommer til at bruge
+* Hacking som e-sport
+** Wargaming sites og CTFs
+** Eksempler på opgaver
+* Det binære og hexadecimale talsystem
+** 2-komplementær notation for negative tal
+** Boolsk algebra
+** Opgaver i C# samt mundligt
+
+17. Januar - Reverse engineering
+Værktøjer: IDA Pro, kode editor og C/C# compiler
+* Statisk vs dynamisk analyse af compilet software
+** Disassemblere
+** Debuggere
+* Forenklet overblik over i386 CPUens bestanddele:
+** Registre
+** Instruktions sæt (assembly)
+* Compiler genereret kode
+** Calling conventions
+** Stakken!!!! <-- Det vigtigste i verden!!!
+* Forskellige opgaver hvor vi omskriver maskinkode til C eller C#.
+
+24. Januar - Exploitation
+Værktøjer: Gnu Debugger, kode editor, Python+pwntools
+* Terminologi
+** Bug/Fejl
+** Vulnerability/Sårbarhed
+** Exploit
+** Remote Code Execution
+** Mitigation
+* Stak baseret buffer overflow via integer conversion
+* Mitigations (så vidt tiden tillader det)
+** Address Space Layout Randomization
+** Stack canaries
+** No Execute for data segmenter
+
+31. Januar - Shellcoding
+Værktøjer: strace, kode editor, Python+pwntools
+* At skrive assembly programmer til Linux på i386
+* Mange udfordringer og forhindringer, vi som hackere skal omgå, når vi injecter maskinkode i en proces
