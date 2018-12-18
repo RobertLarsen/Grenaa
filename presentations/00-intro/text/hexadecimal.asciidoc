@@ -1,0 +1,44 @@
+Talsystemer - Hexadecimal
+-------------------------
+
+Det hexadecimale talsystem = base 16
+
+Består af tallene [0-9] og bogstaverne [a-f]
+
+a=10, b=11, c=12, d=13, e=14, f=15
+
+[source,txt]
+------------------------------------------------
+7a8f = 15 * 16^0 +
+        8 * 16^1 +
+       10 * 16^2 +
+        7 * 16^3
+------------------------------------------------
+
+Talsystemer - Hexadecimal
+-------------------------
+
+"Nemt" at omregne mellem binær og hexadecimal.
+
+Fire binære cifre kan repræsenteres med ét hexadecimalt ciffer.
+
+[source,txt]
+------------------------------------------------
+Binært:        1011 0110
+Hexadecimalt:     b    6
+------------------------------------------------
+
+Talsystemer - Hexadecimal
+-------------------------
+
+Hex dumps
+
+[source,txt]
+------------------------------------------------
+$ xxd some_file.zip
+00000000: 504b 0304 0a00 0000 0000 e384 1f3f 0000  PK...........?..
+00000010: 0000 0000 0000 0000 0000 0c00 1500 6a61  ..............ja
+00000020: 7661 7363 7269 7074 732f 5554 0900 038a  vascripts/UT....
+00000030: 475e 4ea9 475e 4e55 7804 00e8 03e8 0350  G^N.G^NUx......P
+...
+------------------------------------------------

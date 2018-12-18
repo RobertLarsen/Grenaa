@@ -1,0 +1,28 @@
+Binary hacking workshop
+-----------------------
+Formål med workshoppen:
+
+* At skrælle en masse abstraktionslag af software stakken for at komme tættere på hardwaren
+* At lære hvordan sårbarheder ser ud og hvilken verden de åbner op for
+* At se, at hacking faktisk er både sjovt, selvudviklende og nyttigt!
+
+Binary hacking workshop
+-----------------------
+Aftenens formål:
+
+* At introducere emnerne for de øvrige aftener
+* At introducere den software, som vi kommer til at bruge
+* At løse et par hacker challenges...hacking som e-sport
+* At forstå binære og hexadecimale tal
+* At introducere pwntools
+
+Hacking i grove træk
+--------------------
+
+Evil Corporation bruger `server_v1.exe`
+
+1. Find ud af, hvordan `server_v1.exe` fungerer
+2. Find ud af, hvad `server_v1.exe` gør forkert
+3. Find ud af, hvordan en fejl kan udnyttes til at opnå RCE (Remote Code Execution)
+4. Skriv kode, som installerer en bagdør
+5. Skriv exploit, som udnytter fejlen i `server_v1.exe` til at udføre koden, som installerer en bagdør

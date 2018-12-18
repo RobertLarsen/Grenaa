@@ -1,0 +1,52 @@
+Hacking som e-sport
+-------------------
+
+* Wargames
+* Capture The Flag (CTF)
+** Attack/Defence style
+** Jeopardy style
+
+Wargames - Over The Wire
+------------------------
+http://overthewire.org/wargames/bandit/
+
+image::../images/overthewire.png[]
+
+Wargames - VulnHub
+------------------
+https://www.vulnhub.com/
+
+image::../images/vulnhub.png[]
+
+Wargames - Smash The Stack
+--------------------------
+http://io.smashthestack.org/
+
+image::../images/smashthestack.png[]
+
+Wargames - pwnable.kr
+---------------------
+https://pwnable.kr/
+
+image::../images/pwnable.png[]
+
+Wargames - ctftime
+------------------
+http://ctftime.org/
+
+image::../images/ctftime.png[]
+
+Wargames - CTF Repository
+-------------------------
+http://shell-storm.org/repo/CTF/
+
+image::../images/ctf_repo.png[]
+
+Writeups
+--------
+
+Google efter andres løsninger på opgaver I ikke selv kan løse.
+
+Eller for at se alternative, måske mere elegante, løsninger end jeres.
+
+Skriv jeres egne løsninger i jeres blog og høst noget fame.

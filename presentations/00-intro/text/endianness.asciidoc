@@ -1,0 +1,4 @@
+Talsystemer - Endianness
+------------------------
+
+Big endian vs little endian

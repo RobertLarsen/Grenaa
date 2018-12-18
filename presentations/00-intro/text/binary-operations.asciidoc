@@ -1,0 +1,4 @@
+Talsystemer - Binær
+-------------------
+
+AND, OR, XOR, SHIFT LEFT, SHIFT RIGHT
