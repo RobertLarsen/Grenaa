@@ -42,3 +42,10 @@ $ xxd some_file.zip
 00000030: 475e 4ea9 475e 4e55 7804 00e8 03e8 0350  G^N.G^NUx......P
 ...
 ------------------------------------------------
+
+Talsystemer - Hexadecimal
+-------------------------
+
+Debugger
+
+image::../images/debugger_hex.png[]
