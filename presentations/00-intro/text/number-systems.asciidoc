@@ -1,3 +1,11 @@
+Talsystemer
+-----------
+
+image::../images/aben.png[]
+
+https://www.youtube.com/watch?v=5D-qMZ03nVs
+
+
 include::decimal.asciidoc[]
 
 include::binary.asciidoc[]
