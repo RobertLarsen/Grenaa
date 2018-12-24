@@ -1,4 +1,34 @@
 Talsystemer - Endianness
 ------------------------
 
-Big endian vs little endian
+Representation af multibyte værdier i RAM
+
+Talsystemer - Endianness
+------------------------
+
+Tallet 2.864.434.397 har hex værdien 0xaabbccdd.
+
+Altså fire bytes.
+
+Talsystemer - Endianness
+------------------------
+
+Der findes to store "religioner" ang. repræsentation af multibyte:
+
+[source,txt]
+-------------------------------------
+  0xaabbccdd
+
+  Big endian     aa bb cc dd
+
+  Little endian  dd cc bb aa
+-------------------------------------
+
+Talsystemer - Endianness
+------------------------
+
+Intel CPU'er benytter little endian:
+
+image::../images/little_endian.png[]
+
+ARM (bl.a. mobil telefoner) og MIPS (bl.a. netværks udstyr) kan konfigureres til begge.
