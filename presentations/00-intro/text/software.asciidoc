@@ -10,14 +10,14 @@ På din maskine:
 - IDA Pro - https://www.hex-rays.com/products/ida/
 ** Gratis version kan fint bruges til vores formål
 - Resten leveres gennem det Vagrant setup som findes her:
-** https://github.com/RobertLarsen/ProsaWorkshop
+** https://github.com/RobertLarsen/Grenaa
 
 Hent den virtuelle maskine
 --------------------------
 
 [source,txt]
 ------------------------------------------------
-$ git clone https://github.com/RobertLarsen/ProsaWorkshop.git
+$ git clone https://github.com/RobertLarsen/Grenaa.git
 ------------------------------------------------
 
 Start den virtuelle maskine
@@ -25,7 +25,7 @@ Start den virtuelle maskine
 
 [source,txt]
 ------------------------------------------------
-$ cd ProsaWorkshop
+$ cd Grenaa
 $ vagrant up
 ------------------------------------------------
 
@@ -34,7 +34,7 @@ Stop den virtuelle maskine
 
 [source,txt]
 ------------------------------------------------
-$ cd ProsaWorkshop
+$ cd Grenaa
 $ vagrant suspend
 ------------------------------------------------
 
@@ -43,7 +43,7 @@ Opdater den virtuelle maskine
 
 [source,txt]
 ------------------------------------------------
-$ cd ProsaWorkshop
+$ cd Grenaa
 $ git pull
 $ vagrant destroy -f
 $ vagrant up
@@ -54,7 +54,7 @@ Forbind til den virtuelle maskine
 Enten:
 [source,txt]
 ------------------------------------------------
-$ cd ProsaWorkshop
+$ cd Grenaa
 $ vagrant ssh
 ------------------------------------------------
 
