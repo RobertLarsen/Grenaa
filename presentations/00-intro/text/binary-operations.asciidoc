@@ -454,10 +454,10 @@ Talsystemer - Shift left/right
 [source,txt]
 ----------------------------------
 Shift left:
-100101 << 3 = 100101000
+000100101 << 3 = 100101000
 
 Shift right:
-100101 >> 3 = 100
+000100101 >> 3 = 000000100
 ----------------------------------
 
 Talsystemer - Anvendt boolsk algebra
