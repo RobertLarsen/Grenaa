@@ -27,7 +27,7 @@ Der findes to store "religioner" ang. repræsentation af multibyte:
 Talsystemer - Endianness
 ------------------------
 
-Intel CPU'er benytter little endian:
+Hvilken endianness benytter Intel CPU'er?
 
 image::../images/little_endian.png[]
 
