@@ -13,3 +13,5 @@ include::number-systems.asciidoc[]
 include::pwntools.asciidoc[]
 
 include::selfstudy.asciidoc[]
+
+include::homework.asciidoc[]

@@ -1,0 +1,9 @@
+Lektier til næste gang
+----------------------
+
+* Installer IDA Pro freeware
+* Installer VirtualBox
+* Installer Vagrant
+* Installer Git
+* Hent workshop projektet fra https://github.com/RobertLarsen/Grenaa
+* C programming tutorial https://www.learn-c.org/
