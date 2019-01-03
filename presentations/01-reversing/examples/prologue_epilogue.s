@@ -1,0 +1,25 @@
+000004e0 <prologue_epilogue>:
+4e0:  push   ebp
+4e1:  mov    ebp,esp
+4e3:  sub    esp,0x30
+4e6:  mov    eax,DWORD PTR [ebp+0xc]
+4e9:  imul   eax,DWORD PTR [ebp+0x10]
+4ed:  mov    edx,eax
+4ef:  mov    eax,DWORD PTR [ebp+0x8]
+4f2:  add    eax,edx
+4f4:  mov    DWORD PTR [ebp-0x4],eax
+4f7:  mov    eax,DWORD PTR [ebp+0x8]
+4fa:  imul   eax,DWORD PTR [ebp+0x10]
+4fe:  mov    edx,eax
+500:  mov    eax,DWORD PTR [ebp+0xc]
+503:  add    eax,edx
+505:  mov    DWORD PTR [ebp-0x8],eax
+508:  lea    eax,[ebp-0x28]
+50b:  mov    DWORD PTR [eax],0x6c6c6548
+511:  mov    DWORD PTR [eax+0x4],0x57202c6f
+518:  mov    DWORD PTR [eax+0x8],0x646c726f
+51f:  mov    WORD PTR [eax+0xc],0x21
+525:  nop
+526:  leave
+527:  ret
+
