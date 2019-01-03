@@ -13,9 +13,8 @@ cd /vagrant
 sudo -E apt -y update
 sudo -E apt -y install python-pip
 sudo -E pip install ansible
-ansible-galaxy install RobertLarsen.workshop
-ansible-playbook -i /home/vagrant/.ansible/roles/RobertLarsen.workshop/tests/inventory /home/vagrant/.ansible/roles/RobertLarsen.workshop/tests/test.yml
-sudo apt -y install mono-devel
+ansible-galaxy install RobertLarsen.grenaa
+ansible-playbook -i /home/vagrant/.ansible/roles/RobertLarsen.grenaa/tests/inventory /home/vagrant/.ansible/roles/RobertLarsen.grenaa/tests/test.yml
 
 POST=$(date +%s)
 echo "Installation took "$((POST-PRE))" seconds"
