@@ -1,9 +1,10 @@
 Lektier til næste gang
 ----------------------
 
-* Installer IDA Pro freeware
-* Installer VirtualBox
-* Installer Vagrant
-* Installer Git
+* Installer:
+ ** IDA Pro freeware https://www.hex-rays.com/products/ida/support/download_freeware.shtml
+ ** VirtualBox https://www.virtualbox.org/
+ ** Vagrant https://www.vagrantup.com/
+ ** Git https://git-scm.com/downloads
 * Hent workshop projektet fra https://github.com/RobertLarsen/Grenaa
 * C programming tutorial https://www.learn-c.org/
