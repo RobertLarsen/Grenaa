@@ -1,0 +1,10 @@
+Mig - Robert Larsen
+-------------------
+
+* Datamatiker anno 2001
+* 2001-2004 - Udvikling af software til mobil telefoner (før Android/iPhone æraen)
+* 2004-2017 - Browser baseret game engine samt spil, frameworks, etc.
+* 2017-? - Udvikler hos forsvaret
+* Spillet CTF (hacker konkurrencer) i ~10 år
+* Afholdt hacking workshop for Prosa og IDA fagforeningerne
+* Fem gange afholdt CTF for Prosa/IDA
