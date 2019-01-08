@@ -4,8 +4,6 @@ https://www.hex-rays.com/products/ida/ $1129.00 ex moms
 
 https://www.hex-rays.com/products/ida/support/download_freeware.shtml
 
-https://www.hex-rays.com/products/ida/support/download_demo.shtml
-
 image::../images/ida-pro.jpg[]
 
 Statisk analyse værktøjer - IDA Pro + decompiler
