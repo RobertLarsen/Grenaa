@@ -1,3 +1,8 @@
+Reversing - Compiler genereret kode
+-----------------------------------
+
+Calling conventions og kode strukturer
+
 Reversing - Calling conventions
 -------------------------------
 
