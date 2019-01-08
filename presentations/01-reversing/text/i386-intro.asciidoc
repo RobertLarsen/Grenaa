@@ -1,3 +1,8 @@
+Kort introduktion til IDA Pro
+-----------------------------
+
+Åben `assignments/opgave1` i IDA
+
 Introduktion til i386 assembly
 ------------------------------
 
@@ -37,6 +42,8 @@ i386 assembly - Instruktioner
 
 Hvad CPUen kan gøre. Igen, der er mange (CISC husker I nok), men vi kan klare os med meget få.
 
+`opgave1` brugte følgende: mov/movsx, add/sub, push/pop, call/ret, test/cmp, jz/jnz
+
 i386 assembly - mov
 -------------------
 
@@ -73,19 +80,6 @@ push eax            ;Register
 pop ebp             ;Register
 ------------------------------------------------
 
-i386 assembly - inc/dec
------------------------
-
-'inc' ligger én til destinations registret.
-
-'dec' trækker én fra destinations registret.
-
-[source,asm]
-------------------------------------------------
-inc eax             ;Register
-dec eax             ;Register
-------------------------------------------------
-
 i386 assembly - add/sub
 -----------------------
 
@@ -110,10 +104,131 @@ sub eax, DWORD PTR [edx]  ;Register/Memory
 sub [esp], edx            ;Memory/Register
 ------------------------------------------------
 
+i386 assembly - and
+-------------------
+
+Bitvise and. Nulstil bits.
+
+image::../images/and.png[]
+
+[source,asm]
+------------------------------------------------
+and eax 0x0000ff00   ;Isolér 8 bits
+                     ;Måske den grønne komponent i ARGB
+
+and eax, ebx
+------------------------------------------------
+
+i386 assembly - test
+--------------------
+
+Er som en bitwise 'and' instruktion bortset fra at destinations registret ikke ændres.
+
+Bruges ofte til at teste for lighed og ulighed.
+
+[source,asm]
+------------------------------------------------
+test eax, eax   ; Sæt ZF hvis eax == 0, SF hvis eax < 0
+test eax, 16    ; Sæt ZF hvis EAX == 16
+------------------------------------------------
+
+i386 assembly - cmp
+-------------------
+
+Er som en 'sub' instruktion bortset fra at destinations registret ikke ændres.
+
+Bruges ofte til at teste for større end og mindre end eller lighed/ulighed.
+
+[source,asm]
+------------------------------------------------
+cmp eax, 10   ; Sæt ZF hvis eax == 10
+              ; Nulstil ZF og sæt SF = OF hvis eax > 10
+              ; Sæt SF != OF hvis eax < 10
+------------------------------------------------
+
+i386 assembly - jmp
+-------------------
+
+Betingelsesløst spring enten relativt til instruktionen eller absolut.
+
+[source,asm]
+------------------------------------------------
+jmp 47    ; Spring relativt
+
+jmp label ; Spring til "label"
+
+label:    ; <---som er her
+jmp eax   ; Spring til adressen i eax
+------------------------------------------------
+
+Spring er en kilde til forvirring, for assembleren vil oversætte 'jmp short 0' til '0xeb 0xfe' som betyder 'spring 2 tilbage'.
+Det er fordi, vi som programmører ikke bør bekymre os om størrelsen på opcoder, så vi læser og skriver springene som relative til instruktionen selv, men maskinkoden springer relativt til instruktionen efter 'jmp' instruktionen.
+
+Spring baglæns angiver typisk afslutningen af et loop, mens spring fremad er typiske for 'if' statements. IDA Pro er god til at visualisere dette.
+
+i386 assembly - jz/jnz
+----------------------
+
+De nærmest uendeligt mange (32 i hvert fald) betingede spring.
+
+http://unixwiz.net/techtips/x86-jumps.html
+
+[source,asm]
+------------------------------------------------
+test eax, eax      ;Sæt FLAGS ud fra EAX
+jz nul             ;Hvis ZF er sat så spring til 'nul' label
+;eax is not nul    ;Gør dette, hvis eax ikke er nul
+
+jmp end            ;Spring over de næste instruktioner
+nul:
+;eax is nul        ;Gør dette, hvis eax ér nul
+
+end:               ;Afslut
+------------------------------------------------
+
+i386 assembly - call/ret
+------------------------
+
+'call' pusher adresse på næste instruktion på stakken og springer så til en (relativ eller absolut) adresse.
+
+'ret' popper adressen fra stakken ind i 'eip'.
+
+[source,asm]
+------------------------------------------------
+my_routine:
+   ret
+
+call my_routine   ; Relativt kald til my_routine
+
+call ebx          ; Absolut kald til adressen i ebx
+
+call [ebx]        ; Absolut kald til adressen som
+                  ; ligger i hukommelsen på adressen
+                  ; som ebx peger på
+------------------------------------------------
+
+i386 assembly - `opgave1`
+-------------------------
+
+Lad os så løse `opgave1` helt
+
+i386 assembly - inc/dec
+-----------------------
+
+'inc' ligger én til destinations registret.
+
+'dec' trækker én fra destinations registret.
+
+[source,asm]
+------------------------------------------------
+inc eax             ;Register
+dec eax             ;Register
+------------------------------------------------
+
 i386 assembly - mul/imul
 ------------------------
 
-'mul' = Unsigned multiplication (bliver stort set aldrig brugt af compilerne).
+'mul' = Unsigned multiplication
 
 'edx' og 'eax' får henholdsvis de høje og lave 32 bit af unsigned multiplikation mellem 'eax' og source.
 
@@ -217,21 +332,6 @@ ror eax, ebx
 ror eax, 13
 ------------------------------------------------
 
-i386 assembly - and
--------------------
-
-Bitvise and. Nulstil bits.
-
-image::../images/and.png[]
-
-[source,asm]
-------------------------------------------------
-and eax 0x0000ff00   ;Isolér 8 bits
-                     ;Måske den grønne komponent i ARGB
-
-and eax, ebx
-------------------------------------------------
-
 i386 assembly - or
 ------------------
 
@@ -266,94 +366,6 @@ Bitwise not. Ændr værdi for alle bits.
 [source,asm]
 ------------------------------------------------
 not eax
-------------------------------------------------
-
-i386 assembly - test
---------------------
-
-Er som en bitwise 'and' instruktion bortset fra at destinations registret ikke ændres.
-
-Bruges ofte til at teste for lighed og ulighed.
-
-[source,asm]
-------------------------------------------------
-test eax, eax   ; Sæt ZF hvis eax == 0, SF hvis eax < 0
-test eax, 16    ; Sæt ZF hvis EAX == 16
-------------------------------------------------
-
-i386 assembly - cmp
--------------------
-
-Er som en 'sub' instruktion bortset fra at destinations registret ikke ændres.
-
-Bruges ofte til at teste for større end og mindre end eller lighed/ulighed.
-
-[source,asm]
-------------------------------------------------
-cmp eax, 10   ; Sæt ZF hvis eax == 10
-              ; Nulstil ZF og sæt SF = OF hvis eax > 10
-              ; Sæt SF != OF hvis eax < 10
-------------------------------------------------
-
-i386 assembly - jmp
--------------------
-
-Betingelsesløst spring enten relativt til instruktionen eller absolut.
-
-[source,asm]
-------------------------------------------------
-jmp 47    ; Spring relativt
-
-jmp label ; Spring til "label"
-
-label:    ; <---som er her
-jmp eax   ; Spring til adressen i eax
-------------------------------------------------
-
-Spring er en kilde til forvirring, for assembleren vil oversætte 'jmp short 0' til '0xeb 0xfe' som betyder 'spring 2 tilbage'.
-Det er fordi, vi som programmører ikke bør bekymre os om størrelsen på opcoder, så vi læser og skriver springene som relative til instruktionen selv, men maskinkoden springer relativt til instruktionen efter 'jmp' instruktionen.
-
-Spring baglæns angiver typisk afslutningen af et loop, mens spring fremad er typiske for 'if' statements. IDA Pro er god til at visualisere dette.
-
-i386 assembly - je/jz/jne/jnz
------------------------------
-
-De nærmest uendeligt mange (32 i hvert fald) betingede spring.
-
-http://unixwiz.net/techtips/x86-jumps.html
-
-[source,asm]
-------------------------------------------------
-test eax, eax      ;Sæt FLAGS ud fra EAX
-je nul             ;Hvis ZF er sat så spring til 'nul' label
-;eax is not nul    ;Gør dette, hvis eax ikke er nul
-
-jmp end            ;Spring over de næste instruktioner
-nul:
-;eax is nul        ;Gør dette, hvis eax ér nul
-
-end:               ;Afslut
-------------------------------------------------
-
-i386 assembly - call/ret
-------------------------
-
-'call' pusher adresse på næste instruktion på stakken og springer så til en (relativ eller absolut) adresse.
-
-'ret' popper adressen fra stakken ind i 'eip'.
-
-[source,asm]
-------------------------------------------------
-my_routine:
-   ret
-
-call my_routine   ; Relativt kald til my_routine
-
-call ebx          ; Absolut kald til adressen i ebx
-
-call [ebx]        ; Absolut kald til adressen som
-                  ; ligger i hukommelsen på adressen
-                  ; som ebx peger på
 ------------------------------------------------
 
 i386 assembly - lea
