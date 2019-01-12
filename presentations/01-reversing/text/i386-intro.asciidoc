@@ -40,7 +40,7 @@ Bruges til betingede spring. Der er mange, men her er de vigtigste:
 i386 assembly - Instruktioner
 -----------------------------
 
-Hvad CPUen kan gøre. Igen, der er mange (CISC husker I nok), men vi kan klare os med meget få.
+Hvad CPUen kan gøre. Igen, der er mange, ~2000 stykker (CISC husker I nok), men vi kan klare os med meget få.
 
 `opgave1` brugte følgende: mov/movsx, add/sub, push/pop, call/ret, test/cmp, jz/jnz
 
@@ -117,6 +117,8 @@ and eax 0x0000ff00   ;Isolér 8 bits
                      ;Måske den grønne komponent i ARGB
 
 and eax, ebx
+
+and eax, eax         ;Giver dette mening???
 ------------------------------------------------
 
 i386 assembly - test
