@@ -245,7 +245,7 @@ Reversing - Anden opgave
 
 Skriv en serienummergenerator til ProsaCrackme.bin
 
-Denne laver vi sammen og introducerer samtidig IDA Pro.
+Denne laver vi sammen
 
 Reversing - Pointers
 --------------------
