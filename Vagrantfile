@@ -4,6 +4,10 @@
 $ansible = <<EOF
 PRE=$(date +%s)
 
+for file in /vagrant/*.flag; do
+    test -d "${flag}" && rm -rf "${file}"
+done
+
 export DEBIAN_FRONTEND=noninteractive
 #Use DK archives
 sudo perl -pi -e 's/us.archive/dk.archive/g' /etc/apt/sources.list
