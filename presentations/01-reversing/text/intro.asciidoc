@@ -1,3 +1,14 @@
+Opdater jeres VM
+----------------
+
+[source,text]
+----------------------------
+# cd \path\to\Grenaa
+# vagrant destroy -f
+# git pull
+# vagrant up
+----------------------------
+
 Hvorfor?
 --------
 [role="incremental"]
