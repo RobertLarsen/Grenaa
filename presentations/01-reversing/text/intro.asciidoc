@@ -1,7 +1,7 @@
 Opdater jeres VM
 ----------------
 
-[source,text]
+[source,txt]
 ----------------------------
 # cd \path\to\Grenaa
 # vagrant destroy -f
