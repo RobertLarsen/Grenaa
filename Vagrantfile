@@ -33,4 +33,8 @@ Vagrant.configure(2) do |config|
         v.vmx['memsize'] = '2048'
     end
     config.vm.provision "shell", inline: $ansible, privileged: false
+    config.vm.network "forwarded_port", guest: 10007, host: 10007
+    config.vm.network "forwarded_port", guest: 10005, host: 10005
+    config.vm.network "forwarded_port", guest: 10003, host: 10003
+    config.vm.network "forwarded_port", guest: 10001, host: 10001
 end
