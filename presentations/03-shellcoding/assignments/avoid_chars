@@ -1,0 +1,23 @@
+int avoid_chars(int socket) {
+    char buffer[256];
+    unsigned char bad[] = { 0x00, 0x0a, 0x0d, 0x20, 0x3d, 0x3b };
+    int i, j;
+    dprintf(socket, "Give up to %d bytes shellcode...I don't accept these: ", sizeof(buffer));
+    for (i = 0; i < sizeof(bad); i++) {
+        dprintf(socket, i == sizeof(bad) - 1 ? "0x%02x\n" : "0x%02x, ", bad[i]);
+    }
+    for (i = 0; i < sizeof(buffer); i++) {
+        if (read(socket, buffer + i, 1) <= 0) {
+            return 0;
+        }
+        for (j = 0; j < sizeof(bad); j++) {
+            if (buffer[i] == bad[j]) {
+                buffer[i] = 0;
+                EXECUTE_SHELLCODE(buffer);
+                goto done;
+            }
+        }
+    }
+done:
+    return 1;
+}

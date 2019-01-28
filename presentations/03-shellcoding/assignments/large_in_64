@@ -1,0 +1,10 @@
+int large_in_64(int socket) {
+    char buffer[64];
+    dprintf(socket, "Try fitting a large shellcode, say 10.000 bytes, into a %d byte buffer.\n", sizeof(buffer));
+    if (read(socket, buffer, sizeof(buffer)) <= 0) {
+        return 0;
+    }
+    EXECUTE_SHELLCODE(buffer);
+
+    return 1;
+}

@@ -1,0 +1,14 @@
+int trampoline_few_bytes(int socket) {
+    struct {
+        char buffer[256];
+        int last;
+    } shellcode;
+
+    dprintf(socket, "I will now read %d bytes from you but I will only execute the last %d bytes!\n", sizeof(shellcode), sizeof(shellcode.last));
+    if (read(socket, &shellcode, sizeof(shellcode)) <= 0) {
+        return 0;
+    }
+    EXECUTE_SHELLCODE(&shellcode.last);
+
+    return 1;
+}

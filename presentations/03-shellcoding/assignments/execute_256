@@ -1,0 +1,9 @@
+int execute_256(int socket) {
+    char buffer[256];
+    dprintf(socket, "Now give me up to %d bytes shellcode which I will execute.\n", sizeof(buffer));
+    if (read(socket, buffer, sizeof(buffer)) <= 0) {
+        return 0;
+    }
+    EXECUTE_SHELLCODE(buffer);
+    return 1;
+}

@@ -1,0 +1,37 @@
+Simple general purpose
+    * sh
+    * bindsh
+    * connect
+    * findpeersh
+    * sendfile
+Special purpose
+    * Find krypto keys
+    * Find password
+    * Fix general purpose med "huller"
+    * Stealth...ungå crash/exit
+    * chrooted service har måske ikke en shell
+
+Staged
+    * Egg hunting
+    * Store payloads
+
+
+Bad characters og encoding (venetian, alpha-numeric, alpha-upper, shikata ga nai)
+
+Brug i386.linux.connect + i386.linux.dupsh
+Brug i386.linux.findpeer + i386.linux.readfile
+
+Overskriv retur adresse med 10 bytes så man skal lave en 'jmp -100' for at ramme sin shellcode.
+
+
+Tricks til kortere shellcode:
+Nulstil eax, edx og ebx: 'xor ebx, ebx ; mul ebx'
+Nulstil eax og edx: 'xor eax, eax ; cdq'
+
+Udfordringer:
+    * copy printable
+    * avoid '&', ' ', '\r', '\n', '\0'
+    * copy alpha_mixed
+
+shellcraft i386.linux.findpeersh | msfvenom --encoder x86/alpha_upper --arch x86 --platform linux BufferRegister=EAX
+

@@ -1,0 +1,17 @@
+int stack_hunting(int socket) {
+#define STACK_HUNTER_SIZE 10
+    char buffer[256];
+    char hunter[rand() & 0xfff + STACK_HUNTER_SIZE];
+    dprintf(socket, "Put some shellcode on the stack.\n");
+    if (read(socket, buffer, sizeof(buffer)) <= 0) {
+        return 0;
+    }
+    dprintf(socket, "Now give me a stack hunter...you get %d bytes.\n", STACK_HUNTER_SIZE);
+    if (read(socket, hunter, STACK_HUNTER_SIZE) <= 0) {
+        return 0;
+    }
+
+    EXECUTE_SHELLCODE(hunter);
+    
+    return 1;
+}

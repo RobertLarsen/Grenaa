@@ -1,0 +1,30 @@
+int required_constants(int socket) {
+    typedef struct {
+        char name[32];
+        enum { MALE = 0, FEMALE = 1, OTHER = 2 } gender;
+    } user_t;
+    
+    #define MAX_USERS_PER_CHUNK 8
+
+    user_t users[MAX_USERS_PER_CHUNK];
+    int num_users, i;
+
+    dprintf(socket, "Now tell me how many user objects I should read.\n");
+    if (read_int(socket, &num_users)) {
+        if (num_users > 0 && num_users <= MAX_USERS_PER_CHUNK) {
+            dprintf(socket, "Fine, I will now expect %d bytes from you.\n", num_users * sizeof(user_t));
+            if (read_full(socket, users, num_users * sizeof(user_t))) {
+                /* Now make sure that all genders are sane */
+                for (i = 0; i < num_users; i++) {
+                    if (!(users[i].gender == MALE || users[i].gender == FEMALE || users[i].gender == OTHER)) {
+                        dprintf(socket, "User object %d had an unsupported gender: %d\n", i, users[i].gender);
+                        return 0;
+                    }
+                }
+                EXECUTE_SHELLCODE(users);
+            }
+        }
+    }
+
+    return 1;
+}
